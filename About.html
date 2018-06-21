@@ -16,6 +16,21 @@ a {
     }
 
   </style>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+  $(function(){
+    $(document).mousemove(function(e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+        var aa = '<div id="aa" style="position:fixed;border:1px solid black;"></div>';
+          $('body').append(aa);
+        $('#aa').css("left", mouseX+15).css("top", mouseY+15).html("x:"+mouseX+" y:"+mouseY);
+   });
+   $(document).mouseleave(function(e) {
+     $('#aa').remove();
+  });
+  });
+  </script>
 </HEAD>
 
 <body>

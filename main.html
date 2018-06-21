@@ -25,6 +25,22 @@ mytime = setTimeout("startWatch()", 1000)
     font-family: 'Nanum Pen Script';
   }
   </style>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+  $(document).mousemove(function(e) {
+      mouseX = e.pageX;
+      mouseY = e.pageY;
+      var aa = '<div id="aa" style="position:fixed;border:1px solid black;"></div>';
+        $('body').append(aa);
+      $('#aa').css("left", mouseX+15).css("top", mouseY+15).html("x:"+mouseX+" y:"+mouseY);
+
+ });
+ $('iframe').mouseenter(function(e) {
+   $('#aa').remove();
+});
+});
+</script>
 </head>
 
 <body style="font-family:'Nanum Pen Script';font-size:20px;" onload="startWatch()">
@@ -39,6 +55,7 @@ mytime = setTimeout("startWatch()", 1000)
   </div>
   <p>
     <table border=0 cellpadding=0 cellspacing=1 width=100%>
+
       <tr>
         <th width=33% height=30>
           <a href="About.html">기타에 대해서... </a></th>
